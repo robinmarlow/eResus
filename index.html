@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>eresus (BS 4)</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/trauma.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.1/dist/showdown.min.js"></script>
+
+    <div id="content"></div>
+    <script>
+      document.getElementById('content').innerHTML =
+        marked('# Marked in browser\n\nRendered by **marked**.');
+
+        var body_location = './assets/markdown/abdominaltrauma.md';
+                
+        function getText(myUrl){
+            var result = null;
+            $.ajax( { url: myUrl, 
+                      type: 'get', 
+                      dataType: 'html',
+                      async: false,
+                      success: function(data) { result = data; } 
+                    }
+            );
+            FileReady = true;
+            return result;
+        }
+
+        var markdown_source = getText(body_location);
+
+        // convert markdown to html
+        //var output = markdown.toHTML( markdown_source );
+        //document.write(output);
+
+        converter = new showdown.Converter(),
+        html = converter.makeHtml(markdown_source);
+        //target.innerHTML = html;
+        document.write(html);
+
+
+    </script>
+    
+</body>
+
+</html>

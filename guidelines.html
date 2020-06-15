@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<!-- Hello Nerd!
+Still todo:
+    - check it works on IE11
+    - make sure categories are replicated in the scraper script so don't have to fix manually again.
+    - could significantly prune the data by removing the address and minifying the category
+    - should add did to the json rather than regexing it out.
+    - neurosurg and surg get picked up should change the category labels.
+    - add COVID category
+    https://www.w3schools.com/icons/fontawesome5_icons_medical.asp
+-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+
+    <title>BRCH guidelines Index</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/guidelines.css">
+
+    <!-- Font Awesome JS -->
+    <!-- <script defer src="https://kit.fontawesome.com/4956dbe972.js" crossorigin="anonymous"></script> -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script> -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- The overlay -->
+    <div id="myNav" class="overlay">
+      <div id="contentHeader" class="content-header">
+        <a id="originalpdflink" class="dmsbtn" href="#">Link to DMS version</a>
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#8592; back</a> -->
+        </div>
+    <!-- Overlay content -->
+      <div id="pdfgoeshere" class="overlay-content">
+      <!--<embed id="pdfFrame" src="" type="application/pdf" width="100%" height="100%"> -->
+      </div>
+    </div>
+
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/img/BRHCLogo.png" width="100%">
+            </div>
+            <ul id = "sectionTabs" class="list-unstyled components">
+                <li class="active" title="emergency">
+                    <a  href="#">Emergency</a>
+                </li>
+                <li title="general">  <a href="#">General</a></li>
+                <li title="trauma">   <a href="#">Trauma</a></li>
+                <li title="covid">    <a href="#"><i class='fas fa-biohazard'></i> COVID <i class='fas fa-biohazard'></i></a></li>
+                <li title="picu">     <a href="#">PICU</a></li>
+                <li title="burns">    <a href="#">Burns</a></li>
+                <li title="community"><a href="#">Community</a></li>
+                <li title="endocrinology"><a href="#">Endocrine</a></li>
+                <li title="gastro">   <a href="#">Gastroenterology</a></li>
+                <li title="haemonc">  <a href="#">HaemOnc</a></li>
+                <li title="hdu">      <a href="#">HDU</a></li>
+                <li title="infdis">   <a href="#">Infections</a></li>
+                <li title="metabolic"><a href="#">Metabolic</a></li>
+                <li title="nephrol">  <a href="#">Nephrology</a></li>
+                <li title="neurosurg"><a href="#">Neurosurgery</a></li>
+                <li title="resp">     <a href="#">Respiratory</a></li>
+                <li title="surg">     <a href="#">Surgery</a></li>
+                <li title="ortho">    <a href="#">Orthopaedic</a></li>
+                <li title="watch">    <a href="#">WATCh</a></li>
+                <li title="about">    <a href="#">About</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <h1>Children's Emergency Department Guidelines Index</h1>
+                </div>
+            </nav>
+            
+      <div class="search">
+      <input type="text" class="searchTerm" placeholder="Which guideline are you looking for?" id=searchBox>
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+     </div>
+
+ <a id="chromePluginAlert" class="chromePluginAlert" href="https://chrome.google.com/webstore/detail/pdf-viewer/oemmndcbldboiebfnladdacbdfmadadm" style="display:none">Install this plugin if PDFs are downloading not displaying in page.</a>
+
+            <div class="line"></div>
+
+            <div id="guidelineBox" class="container-fluid">
+              <div class="col-8" category="about" title="" keywords="" link="" did="" style="display:none">Created by <a href="mailto:robin.marlow@uhbw.nhs.uk?subject=Guidelines website">Robin Marlow</a>,  please let me know if you have any suggestions or something's broken.</div>
+            </div>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/guidelines.js"></script>
+    
+</body>
+
+</html>
