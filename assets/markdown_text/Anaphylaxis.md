@@ -1,5 +1,5 @@
 # Anaphylaxis
-![Anaphylaxis](http://127.0.0.1:8887/anaphylaxis.png)
+![Anaphylaxis](./assets/markdown_images/anaphylaxis.png =40%x40% "this is the title")
 
 
 ### Intramuscular Adrenaline (in-hospital)
@@ -42,6 +42,3 @@ Dose 20mls/kg bolus of 0.9% sodium chloride  repeated as required
 
 --- 
 eResus v2.0 based on [Anaphylaxis v3.1](http://workspaces/sites/Teams/ChildrensEmergencyDepartment/guidelines/BCH_guidelines/1/index.html#14843)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3NzU3MDM4XX0=
--->

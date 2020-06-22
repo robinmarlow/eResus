@@ -3,11 +3,10 @@
 */
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
-#guidelineBox > div:nth-child(even) {
-    background:#EBEFF4;
-  }
+/*font-family: 'Noto Sans', sans-serif;
+*/
   
-  #guidelineBox > div {
+#guidelineBox > div {
     padding-top: 15px;
     padding-bottom: 15px;
   }

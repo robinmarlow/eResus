@@ -1,0 +1,16 @@
+[
+    {"page" : "index",  "title" : "Medical",        "image" : "medical.png",    "action" : "navigate",  "link" : "medical"},
+    {"page" : "index",  "title" : "Trauma",         "image" : "trauma.png",     "action" : "navigate",  "link" : "trauma"},
+    {"page" : "index",  "title" : "Resus",          "image" : "resus.png",      "action" : "external",  "link" : "resus"},
+    {"page" : "index",  "title" : "Contacts",       "image" : "contacts.png",   "action" : "navigate",  "link" : "contacts"},
+    {"page" : "index",  "title" : "Distraction",    "image" : "distract.png",   "action" : "navigate",  "link" : "trauma"},
+    {"page" : "index",  "title" : "Medusa",         "image" : "medusa.png",     "action" : "external",  "link" : "http://medusa.com"},
+    {"page" : "index",  "title" : "PICU sheet",     "image" : "picu.png",       "action" : "navigate",  "link" : "picu"},
+    {"page" : "index",  "title" : "Index",          "image" : "all.png",        "action" : "navigate",  "link" : "index"},
+ 
+    {"page" : "medical","title" : "First card",     "image" : "",                 "action" : "page",      "link" : "asthma.md"},
+    {"page" : "medical","title" : "Second card",    "image" : "",                 "action" : "page",      "link" : "status.md"},
+
+    {"page" : "trauma", "title" : "First card",   "image" : "", "action" : "page",      "link" : "femur.md"},
+    {"page" : "trauma", "title" : "Second card",  "image" : "", "action" : "page",      "link" : "arrest.md"}
+    ]
