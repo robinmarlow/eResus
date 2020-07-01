@@ -41,8 +41,10 @@ ABCDE approach
 If further boluses required give blood . Activate major hemorrhage protocol
 - Give Tranexamic acid
 - Consider NGT (unless contraindicated – basal skull #)
-[link major Haemorrhage]
-[link pain protocol]
+
+[Major Haemorrhage](#majorHaemorrhage.md)
+
+[Pain protocol](#pain.md)
 
 ### Investigations
 - Bloods – FBC, U&Es, LFTs, amylase, cross-match, BM
@@ -61,6 +63,3 @@ If further boluses required give blood . Activate major hemorrhage protocol
 
 --- 
 eResus v2.0 based on [Abdominal Trauma v2.1](http://workspaces/sites/Teams/ChildrensEmergencyDepartment/guidelines/BCH_guidelines/1/index.html#19516)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3NDAyOTAxNl19
--->

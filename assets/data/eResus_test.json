@@ -27,7 +27,6 @@
     ],
     
     "trauma": [
-        {"title" : "Abdominal Trauma",          "image" : "",               "action" : "page",  "link" : "abdominalTrauma.md"},
         {"title" : "Burns",                     "image" : "medical.png",    "action" : "page",  "link" : "burns.md"},
         {"title" : "Toxic shock in burns",      "image" : "trauma.png",     "action" : "page",  "link" : "toxicShockInBurns.md"},
         {"title" : "Fractured femur",           "image" : "resus.png",      "action" : "page",  "link" : "femurFracture.md"},

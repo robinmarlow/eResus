@@ -2,13 +2,7 @@
 
 <!-- Hello Nerd!
 Still todo:
-    - check it works on IE11
-    - make sure categories are replicated in the scraper script so don't have to fix manually again.
-    - could significantly prune the data by removing the address and minifying the category
-    - should add did to the json rather than regexing it out.
-    - neurosurg and surg get picked up should change the category labels.
-    - add COVID category
-    https://www.w3schools.com/icons/fontawesome5_icons_medical.asp
+
 -->
 
 <html>
@@ -31,22 +25,30 @@ Still todo:
 </head>
 
 <body>
-    <!-- The overlay -->
-    <div id="myNav" class="overlay">
-      <div id="contentHeader" class="content-header">
-        <a id="originalpdflink" class="dmsbtn" href="#">Link to DMS version</a>
-        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#8592; back</a> -->
+    <!-- The PDF overlay (if needed)-->
+    <div id="pdfOverlay" class="overlay">
+      <div id="DMSlink" class="">
+          <a id="originalpdflink" class="dmsbtn" href="#">Link to DMS version</a>
         </div>
-    <!-- Overlay content -->
-      <div id="pdfgoeshere" class="overlay-content">
-      <!--<embed id="pdfFrame" src="" type="application/pdf" width="100%" height="100%"> -->
-      </div>
+        <!-- Overlay content -->
+        <div id="pdfgoeshere" class="overlay-content">
+            <!--<embed id="pdfFrame" src="" type="application/pdf" width="100%" height="100%"> -->
+        </div>
     </div>
 
 
-    <div class="wrapper">
+    <div class="container">
+            <div class="row" style="margin-top: 20px;margin-bottom: 20px;">
+                <div class="col-sm-3"><img src="assets/img/CED_Rings_2_Logo.PNG" width="100%"></div>
+                <div class="col-sm-9">
+                    <h1 class="text-center" style="">Children's eResus</h1>
+                </div>
+            </div>
+
+    
+        
         <!-- Sidebar Holder -->
-        <nav id="sidebar">
+<!--         <nav id="sidebar">
             <div class="sidebar-header">
                 <a href="http://workspaces/sites/Teams/ChildrensEmergencyDepartment/guidelines/BCH_guidelines/1/index.html">
                     <img src="assets/img/BRHCLogo.png" width="100%">
@@ -59,18 +61,26 @@ Still todo:
 >
             </ul>
         </nav>
-
+ -->
         <!-- Page Content Holder -->
-        <div id="content">
+        <div class="row" id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!--             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <h1>Children's Emergency Department eResus</h1>
                 </div>
             </nav>
-            
-            <div class="line"></div>
+ -->
+            <nav aria-label="breadcrumb" id="breadcrumbs">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item" link='index'>Index</a></li>
+                    <!-- <li class="breadcrumb-item"><a href="#">Medical</a></li>
+                    <li class="breadcrumb-item">Trauma</li>
+                    <li class="breadcrumb-item active" aria-current="page">Resus</li> -->
+                </ol>
+              </nav>
 
+<div class="row">
             <div id="cards" class="card-columns" style="column-count: 4;">
 
  <!--                 <div class="card" style="width: 12em;">
@@ -89,10 +99,11 @@ Still todo:
  -->
 
             </div>
+        </div>
 
-            <div id="contentBox" class="container-fluid">
-            </div>
-
+        <div class="row">
+            <div id="contentBox" class="container-fluid"></div>
+</div>
 
             <div class="line"></div>
         </div>
