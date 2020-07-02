@@ -1,5 +1,5 @@
-var crumbs=["index"];
 var link2title_map = new Map();
+link2title_map.set( "home", "Home");
 
 $(document).ready(function(){
 
@@ -12,20 +12,17 @@ $.getJSON( "assets/data/eResus.json", function( data ) {
 
    for(var i = 0; i < box_titles.length; i++) {
      let pack = document.createElement("div");
-     pack.className="packOfCards";
+     pack.className="packOfCards row";
      pack.id=box_titles[i];
 
-     if(box_titles[i]!="index")
+     if(box_titles[i]!="home")
      {pack.setAttribute("style", "display:none");}
-
 
      let card_data = data[box_titles[i]];
 
        for(var j = 0; j < card_data.length; j++) {
         var obj = card_data[j];
         link2title_map.set( obj.link, obj.title);
-        //console.log(obj.title);
-        //add("guidelineBox", obj.title, obj.link, obj.summary, obj.category);
 
         /* <div class="card" style="width: 12em;">
         <img class="card-img-top" src="assets/img/medical.png" alt="Medical">
@@ -33,6 +30,9 @@ $.getJSON( "assets/data/eResus.json", function( data ) {
           <h5 class="card-title text-center">Medical</h5>
         </div>
         </div> */
+
+        var col = document.createElement("div");
+        col.className="col col-lg-3";
 
         var new_card = document.createElement("div");
         new_card.className="card";
@@ -42,7 +42,7 @@ $.getJSON( "assets/data/eResus.json", function( data ) {
         new_card.setAttribute("link"     , obj.link);
         new_card.setAttribute("action"    , obj.action);
 
-        if (box_titles[i]=="index"){
+        if (box_titles[i]=="home"){
         var card_img = document.createElement("img");
         card_img.className="card-img-top";
         card_img.alt = obj.title;
@@ -51,10 +51,9 @@ $.getJSON( "assets/data/eResus.json", function( data ) {
         new_card.appendChild(card_img);
         }
 
-        if (box_titles[i]!="index"){
+        if (box_titles[i]!="home"){
           new_card.setAttribute("style" , "height: 6rem;");
           }
-
 
         var card_content = document.createElement("h5");
         card_content.className = "card-title text-center ";
@@ -63,15 +62,18 @@ $.getJSON( "assets/data/eResus.json", function( data ) {
         var card_body = document.createElement("div");
         card_body.className = "card-body align-middle";
         card_body.appendChild(card_content);
-
        
         new_card.appendChild(card_body);
-        
-        pack.appendChild(new_card);
+        col.appendChild(new_card)        
+        pack.appendChild(col);
+
+        //new_card.appendChild(card_body);        
+        //pack.appendChild(new_card);
     }
     frag.appendChild(pack);
   }
   document.getElementById('cards').appendChild(frag);
+  hashHandler();
 });
 
 
@@ -84,49 +86,27 @@ $( "#cards" ).on( "click", "div", function( event ) {
     //console.log("--------------------------------------");
     
     //jsonmap.get($( this ).attr('did')).link / title / etc
-    
+
     switch($( this ).attr('action')) {
 
       case "navigate":
-      location.hash = $( this ).attr('link')
-      //location.hash = location.hash.concat($( this ).attr('link'));
-      //add title to breadcrumb
-      addCrumb( $( this ).attr('link') );
-
-        // code block
-        console.log("navigate....");
-        //$( ".contentBox" ).hide();
-        //$( ".packOfCards" ).hide();
-        //console.log( "#".concat($( this ).attr('link')) );
-        //$( "#".concat($( this ).attr('link')) ).show();
-        //location.hash = $( this ).attr('link');
+        location.hash = location.hash.concat("&",$( this ).attr('link'));
         break;
 
       case "page":
-      // code block
-      location.hash = "display?".concat( $( this ).attr('link') );
-      //location.hash = location.hash.concat($( this ).attr('link') );
-      //location.hash = $( this ).attr('link')
-      //add title to breadcrumb
-      addCrumb( $( this ).attr('link') );
-        //location.hash = $( this ).attr('did');
-      break;
+        location.hash = location.hash.concat("&",$( this ).attr('link') );
+        break;
  
       case "external":
-          // code block
-          console.log("open window to....");
-          var myWindow = window.open("http://youtube.com", "_self");
-          break;
+        console.log("open window to....");
+        var myWindow = window.open( $( this ).attr('link'), "_self");
+        break;
 
       default:
-        console.log("this action isn't defined!");
-        // code block
+        console.log("Oh dear! No action defined!");
     }
 
-
-
-    //openNav($( this ).attr('did'));
-    //location.hash = $( this ).attr('did');
+// Google tracking code!
     //$.get( "https://script.google.com/macros/s/AKfycbxRjFBnNxcaqtXVshuiC2NaxRx9ZlCSIKE4ekn3tO0NExX4Jg/exec",
     //      { Title : $( this ).attr('title'),
     //        URL   : $( this ).attr('link')} );
@@ -137,47 +117,36 @@ $( "#cards" ).on( "click", "div", function( event ) {
 
 
 
-
 $( "#breadcrumbs" ).on( "click", "li", function( event ) {
-console.log("clicked on: ",$( this ).attr('link') );
 
-console.log( "current crumbtrail: ", crumbs );
+//
+// Reads the '#home&trauma' and trims it to where was clicked then sets the hash to that.
+//
 
-let crumbNo = crumbs.indexOf($( this ).attr('link')) + 1;
-console.log("crumbs length:",crumbs.length);
-console.log("clicked at level: ",crumbNo);
-
-if ( (crumbs.length > 1) & (crumbNo < crumbs.length) ){
-  console.log( "new crumbtrail: ", crumbs.slice(0,crumbNo));
-  crumbs = crumbs.slice(0,crumbNo);
-  drawCrumbs();
-  location.hash = $( this ).attr('link');
-} else { 
-  console.log("clicked on last element so not doing anything");  
-}
-
+  console.log("clicked on: ",$( this ).attr('link') );
+  
+  let hashlink = $( this ).attr('link') ;
+  let hash=location.hash.replace('#&','').replace('#','');
+  let endpoint = (hash.indexOf(hashlink)+hashlink.length);
+  
+  console.log(hash.substring(0, endpoint));
+  location.hash=hash.substring(0, endpoint);
 });
 
-function addCrumb(link){
-  var new_breadcrumb = document.createElement("li");
-  new_breadcrumb.className = "breadcrumb-item";
-  new_breadcrumb.innerHTML = link2title_map.get(link);
-  new_breadcrumb.setAttribute("link"    ,link);
-  $("#breadcrumbs > ol").append(new_breadcrumb);
-  crumbs.push(link);
-}
 
-function drawCrumbs(){
-
+function drawCrumbs(crumbs){
+//
+// erases all the crumb elements then redraws from the crumbs array it was passed.
+//
   console.log("draw crumbs",crumbs);
   var elements = document.getElementsByClassName("breadcrumb-item");
   while(elements.length > 0){
-      console.log("removing element");
+      //console.log("removing element");
       elements[0].parentNode.removeChild(elements[0]);
   }
   
 crumbs.forEach(element => {
-  console.log("add ",element);
+  //console.log("add ",element);
   var new_breadcrumb = document.createElement("li");
   new_breadcrumb.className = "breadcrumb-item";
   new_breadcrumb.innerHTML = link2title_map.get(element);
@@ -190,10 +159,10 @@ crumbs.forEach(element => {
 
 
 function displayPage(MDfile) {
-  console.log("showing page....",MDfile);
-  $( ".packOfCards" ).hide();
 
-  var body_location = './assets/markdown_text/'.concat(MDfile);
+  console.log("showing page....",MDfile);
+
+  var body_location = './guidelines.md/'.concat(MDfile);
     
   function getText(myUrl){
       var result = null;
@@ -213,46 +182,44 @@ function displayPage(MDfile) {
   html = converter.makeHtml(markdown_source);
   document.getElementById('contentBox').innerHTML = html;
   
-  $( ".contentBox" ).show();
-  //document.getElementById("myNav").style.display = "block";
 }
 
 
 
 function hashHandler() {
-  let hash=location.hash.replace('#','');
   document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+  let urlhash=location.hash.replace('#&','').replace('#','');
+  console.log('full hash:', urlhash);
+  crumbs = urlhash.split("&");
+  console.log('component links:', crumbs);
   
-  console.log('The hash has changed to:', hash);
-  if (hash === '') {
+  drawCrumbs(crumbs);
+
+  active_crumb=crumbs[crumbs.length-1];
+  
+  console.log('The active page has changed to:', active_crumb);
+  if (active_crumb === '') {
     console.log("resetting to home");
     location.hash = "home";
 
-  //} else if( hash.startsWith("display") ) {
-  } else if( /\.md$/.test(hash) ) {
-    console.log ("trying to display a page");
-    //link=hash.substring(8); //removes display?
-    link=hash;
-    console.log ("link: ",link);
-    //title=link2title_map.get(link);
-    //console.log ("title: ",title);    
-    //addCrumb(link);
-    displayPage(link);
+  } else if( /\.md$/.test(active_crumb) ) {
+    console.log ("creating html page");
+    displayPage(active_crumb);
+    $( ".packOfCards" ).hide();
     $( "#contentBox" ).show();
-    
+     //document.getElementById("contentBox").style.display = "block";
+
   } else {
-    console.log ("navigating to section ",hash)
+    console.log ("navigating to section")
     $( "#contentBox" ).hide();
     $( ".packOfCards" ).hide();
-    console.log( "#".concat(hash) );
-    $( "#".concat(hash)).show();
-
-  }
-  
+    //console.log( "#".concat(active_crumb) );
+    $( "#".concat(active_crumb)).show();
+  }  
 }
 
 window.addEventListener('hashchange', hashHandler, false);
-
 
 
 });

@@ -1,5 +1,5 @@
 # Head Injury
-![Head injury](http://127.0.0.1:8887/headinjury.png)
+![Head injury](./guidelines.md/headInjury.png)
 
 Consider transexamic acid?
 

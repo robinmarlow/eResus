@@ -8,7 +8,7 @@ Simplified Criteria for TSS
 - Lymphopenia / hyponatraemia
 
 ### Protocol
-![RSI checklist](http://127.0.0.1:8887/TSS_burns.png)
+![RSI checklist](./guidelines.md/TSS_burns.png)
 
 ### Management
 - Inform HDU/ PICU consultant
@@ -30,12 +30,9 @@ Simplified Criteria for TSS
 
 NB THESE ABX are wrong
 
-![FFP in Burns](http://127.0.0.1:8887/TSS_burns_FFP.png)
+![FFP in Burns](./guidelines.md/TSS_burns_FFP.png)
 
-![IVIG in burns](http://127.0.0.1:8887/TSS_burns_IVIG.png)
+![IVIG in burns](./guidelines.md/TSS_burns_IVIG.png)
 
 --- 
 eResus v2.0 based on [Toxic shock in burns V2.0](http://workspaces/sites/Teams/ChildrensEmergencyDepartment/guidelines/BCH_guidelines/1/index.html#17054)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0OTI0MzAzMl19
--->

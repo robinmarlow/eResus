@@ -1,5 +1,5 @@
 
-![APLS algorithm](http://127.0.0.1:8887/apls.png)
+![APLS algorithm](./guidelines.md/apls.png)
 
 --- 
 eResus v2.0 based on [APLS 6th edition](http://workspaces/sites/Teams/ChildrensEmergencyDepartment/guidelines/BCH_guidelines/1/index.html#18097)

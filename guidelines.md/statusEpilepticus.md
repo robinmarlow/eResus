@@ -1,14 +1,11 @@
 # Status Epilepticus
-![Status Epilepticus protocol](http://127.0.0.1:8887/statusepilepticus.png)
+![Status Epilepticus protocol](./guidelines.md/statusEpilepticus.png)
 Consider paraldehyde 0.8mls/kg (max 20ml) while waiting for phenytoin to be drawn up.
 
 ### Phenytoin Infusion table
-![RSI checklist](http://127.0.0.1:8887/statusepilepticus_phenytoin.png)
+![RSI checklist](./guidelines.md/statusEpilepticus_phenytoin.png)
 
 --- 
 eResus v2.0 based on [Status Epilepticus v 1.0](http://workspaces/sites/Teams/ChildrensEmergencyDepartment/guidelines/BCH_guidelines/1/index.html#13077)
 
 https://www.alsg.org/en/files/APLS/APLS_6e_Manual_updates.pdf
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNDU3NTk2NTgwXX0=
--->

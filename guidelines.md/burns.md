@@ -1,6 +1,6 @@
 
 Burns
-![Burns algorithm](http://127.0.0.1:8887/burns.png)
+![Burns algorithm](./guidelines.md/burns_algo.png)
 
 ## Indications for major trauma call
 Burns TBSA ≥20% (consider if ≥10%)
@@ -37,7 +37,7 @@ Intravenous
 Morphine 100 – 200 micrograms/kg (seek advice if < 1year)
 
 ## BSA and Depth
-![Burns algorithm](http://127.0.0.1:8887/burns2.png)
+![Burns algorithm](./guidelines.md/burns2.png)
 
 Assessment of depth is difficult and not necessary for initial management (refer to full guidelines for depth assessment)
 

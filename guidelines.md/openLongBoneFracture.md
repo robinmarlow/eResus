@@ -1,5 +1,5 @@
 # Open long bone fracture
-![Burns algorithm](http://127.0.0.1:8887/openlongbonefracture.png)
+![Burns algorithm](./guidelines.md/openLongBoneFracture.png)
 Link pain management
 link compartment syndrome
 link antibiotic guidelines

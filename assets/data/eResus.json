@@ -1,5 +1,5 @@
 {
-    "index": [
+    "home": [
         {"title" : "Medical",        "image" : "medical.png",    "action" : "navigate",  "link" : "medical"},
         {"title" : "Trauma",         "image" : "trauma.png",     "action" : "navigate",  "link" : "trauma"},
         {"title" : "Resus",          "image" : "resus.png",      "action" : "navigate",  "link" : "resus"},

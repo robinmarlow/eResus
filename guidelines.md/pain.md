@@ -1,5 +1,5 @@
 # Pain
-![RSI checklist](http://127.0.0.1:8887/pain.png)
+![Pain ladder](./guidelines.md/pain.png)
 ## Paracetamol
 Oral and PR Paracetamol
 < 3 month

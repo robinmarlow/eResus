@@ -1,6 +1,6 @@
 # Femoral Fracture
 
-![RSI checklist](http://127.0.0.1:8887/femoral_fracture.png)
+![RSI checklist](./guidelines.md/femoral_fracture.png)
 
 ## Femoral Nerve Block
 USS guided or landmark technique 

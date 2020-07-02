@@ -1,5 +1,5 @@
 # Asthma
-![APLS algorithm](http://127.0.0.1:8887/asthma.png)
+![Asthma protocol](./guidelines.md/asthma.png)
 
 ## Management of severe and life threatening asthma 
 

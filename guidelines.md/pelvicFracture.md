@@ -1,5 +1,5 @@
 # Pelvic Fracture
-![RSI checklist](http://127.0.0.1:8887/pelvicfracture.png)
+![RSI checklist](./guidelines.md/pelvicFracture.png)
 ## Imaging in Pelvic Injury
 AP pelvis with binder on. If stable repeat with binder off and additional imaging 
 Acetabular fracture Judet view

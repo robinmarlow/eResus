@@ -1,5 +1,5 @@
 # RSI checklist
-![RSI checklist](http://127.0.0.1:8887/checklist.png)
+![RSI checklist](./guidelines.md/rsiChecklist.png)
 Link to difficult airway guidelines
 
 --- 

@@ -1,5 +1,5 @@
 #Major Haemorrhage
-![RSI checklist](http://127.0.0.1:8887/majorhaemorrhage.png)
+![Major Haemorrhage protocol](./guidelines.md/majorHaemorrhage.png)
 
 ## Activating the major haemorrhage protocol
 Call 2222
