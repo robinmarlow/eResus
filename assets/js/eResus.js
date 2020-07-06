@@ -145,7 +145,7 @@ function drawCrumbs(crumbs){
       elements[0].parentNode.removeChild(elements[0]);
   }
   
-crumbs.forEach(element => {
+crumbs.forEach( function (element) {
   //console.log("add ",element);
   var new_breadcrumb = document.createElement("li");
   new_breadcrumb.className = "breadcrumb-item";
