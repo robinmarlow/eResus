@@ -8,7 +8,7 @@ Simplified Criteria for TSS
 - Lymphopenia / hyponatraemia
 
 ### Protocol
-![TSS protocol](./guidelines.md/TSS_burns.png)
+![TSS protocol](./TSS_burns.png)
 
 ### Management
 - Inform HDU/ PICU consultant
