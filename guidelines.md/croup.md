@@ -1,30 +1,13 @@
 # Croup
 Assess croup severity (Westley score)
 
-Inspiratory stridor
-0 none
-1 Agitated/active
-2 At rest
-Intercostal recession
-1 Mild
-2 Moderate
-3 Severe
-Air Entry
-0 Normal 
-1 Mildly Decreased
-2 Severely Decreased
-Level of conciousness
-0 Normal
-5 Altered
-Cyanosis
-0 None
-4 Agitation / activity
-5 At rest
+| Inspiratory stridor | Intercostal recession | Air Entry | Level of conciousness | Cyanosis |
+|0 none| 1 Mild | 0 Normal | 0 Normal | 0 None |
+| 1 Agitated/active| 2 Moderate | 1 Mildly Decreased | 5 Altered | 4 Agitation / activity|
+| 2 At rest | 3 Severe | 2 Severely Decreased ||5 At rest|
 
-Score 
-≤ 2 Mild
-3-6	Moderate
-\>6 Severe
+
+Score  | ≤ 2 Mild | 3-6	Moderate | \>6 Severe|
 
 ## Management of severe croup
 Minimise agitation/ stress
